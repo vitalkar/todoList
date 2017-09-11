@@ -1,0 +1,45 @@
+doctype html
+html
+ head
+  title My ToDo List
+  meta(name='viewport', content='width=device-width, initial-scale=1.0', charset="utf-8")
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',rel='stylesheet')
+  link(href='/public/css/styles.css', rel='stylesheet')
+ body
+  div.row 
+   div.todos-area.col-9.col-m-12
+    i.fa.fa-plus#addTodo
+    span add new item
+     
+     form(id="todoform")
+      div
+       label(for = "header") todo: 
+       input(name = "header" value ="" placeholder="what you want to do?" required)
+      br
+      div
+       textarea(id="description",name="description",value="",placeholder="add a description" cols="20" rows="4")
+      br
+      button#subBtn Send
+
+     ul#todoList
+      each todo in todos
+       li.todo 
+        p(id=todo._id)= todo.header
+        small.todoDesc= ' ' + todo.description
+        i.fa.fa-trash-o
+        i.fa.fa-pencil-square-o
+         
+         
+
+   div.lists-area.col-3.col-m-12
+    i.fa.fa-plus#addList 
+    span add new list 
+     h3 other lists
+     ul#otherLists
+      li 1
+      li 2
+      li 3
+
+  script(src="https://code.jquery.com/jquery-3.2.1.min.js")    
+  script(src="/public/js/todos.js")
+

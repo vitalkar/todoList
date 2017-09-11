@@ -1,0 +1,9 @@
+todos spec:
+
+todo : {content,time,done}
+
+
+-alert 
+-timer
+-sound
+-urgency : scale
